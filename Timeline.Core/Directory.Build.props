@@ -1,0 +1,67 @@
+<Project>
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+
+    <RootNamespace>Timeline</RootNamespace>
+    <AssemblyName>Timeline</AssemblyName>
+
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+
+    <BuildType>$(MSBuildProjectName.Split('.')[1])</BuildType>
+    <BaseIntermediateOutputPath>obj\$(BuildType)\</BaseIntermediateOutputPath>
+    <OutputPath>..\bin\$(BuildType)\</OutputPath>
+    <DefaultItemExcludes>$(DefaultItemExcludes);bin\**\*</DefaultItemExcludes>
+    <DefaultItemExcludes>$(DefaultItemExcludes);obj\**\*</DefaultItemExcludes>
+
+    <!--
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    -->
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugType>embedded</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <ImportGroup>
+    <Import Project="..\ToolBox\ToolBox.projitems" Label="Shared" />
+    <Import Project="..\UIUtility\UIUtility.projitems" Label="Shared" />
+  </ImportGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Help.txt" />
+    <EmbeddedResource Include="Resources\TimelineResources.unity3d" />
+    <EmbeddedResource Include="Resources\TimelineResourcesKoi.unity3d" />
+    <EmbeddedResource Include="Resources\timeline_button.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IllusionLibs.BepInEx" Version="5.4.22" />
+    <PackageReference Include="IllusionLibs.BepInEx.Harmony" Version="2.9.0" />
+    <PackageReference Include="IllusionLibs.BepInEx.MonoMod" Version="22.1.29.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.0.4" PrivateAssets="all">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Unity.Analyzers" Version="1.19.0" PrivateAssets="all">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

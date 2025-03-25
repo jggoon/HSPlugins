@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+    <DefineConstants>$(DefineConstants);BEPINEX;KOIKATSU;SUNSHINE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.Assembly-CSharp" Version="2021.9.17" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.Assembly-CSharp-firstpass" Version="2021.9.17" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UniRx" Version="2021.9.17" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UniTask" Version="2021.9.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.AnimationModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.AssetBundleModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.CoreModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.IMGUIModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.InputLegacyModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.PhysicsModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.TextRenderingModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.UI" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.UIModule" Version="2019.4.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ExtensibleSaveFormat.KoikatsuSunshine" Version="18.2.0" PrivateAssets="all" />
+    <PackageReference Include="IllusionModdingAPI.KKSAPI" Version="1.39.0" PrivateAssets="all" />
+    <PackageReference Include="Sideloader.KoikatsuSunshine" Version="18.2.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <Target Name="Install" AfterTargets="PostBuildEvent">
+    <Exec Condition="Exists('$(SolutionDir)PostBuild.bat')" Command="&quot;$(SolutionDir)PostBuild.bat&quot; &quot;$(TargetPath)&quot; KKS" />
+  </Target>
+
+</Project>

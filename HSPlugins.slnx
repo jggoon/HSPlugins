@@ -1,0 +1,13 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Timeline.Core/">
+    <Project Path="Timeline.Core/Timeline.AI.csproj" />
+    <Project Path="Timeline.Core/Timeline.HS2.csproj" />
+    <Project Path="Timeline.Core/Timeline.KK.csproj" />
+    <Project Path="Timeline.Core/Timeline.KKS.csproj" />
+  </Folder>
+</Solution>
