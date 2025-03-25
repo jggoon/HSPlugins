@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+    <DefineConstants>$(DefineConstants);BEPINEX;KOIKATSU;SUNSHINE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.Assembly-CSharp" Version="2021.9.17" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.Assembly-CSharp-firstpass" Version="2021.9.17" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UniRx" Version="2021.9.17" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UniTask" Version="2021.9.17" />
+    <PackageReference Include="IllusionLibs.Koikatu.Vectrosity" Version="2019.4.27.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.AnimationModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.CoreModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.IMGUIModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.InputLegacyModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.PhysicsModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.TextRenderingModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.UI" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.UIModule" Version="2019.4.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ExtensibleSaveFormat.KoikatsuSunshine" Version="18.2.0" />
+    <PackageReference Include="IllusionModdingAPI.KKSAPI" Version="1.39.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PostBuildEvent>IF EXIST "$(SolutionDir)PostBuild.bat" CALL "$(SolutionDir)PostBuild.bat" "$(TargetPath)" KKS</PostBuildEvent>
+  </PropertyGroup>
+
+</Project>
