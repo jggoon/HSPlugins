@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+    <AssemblyName>AIUS</AssemblyName>
+    <DefineConstants>$(DefineConstants);BEPINEX;AISHOUJO</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IllusionLibs.AIGirl.Assembly-CSharp" Version="2020.5.29.5" />
+    <PackageReference Include="IllusionLibs.AIGirl.Unity.TextMeshPro" Version="2018.2.21.4" />
+    <PackageReference Include="IllusionLibs.AIGirl.UnityEngine.AnimationModule" Version="2018.2.21.4" />
+    <PackageReference Include="IllusionLibs.AIGirl.UnityEngine.AssetBundleModule" Version="2018.2.21.4" />
+    <PackageReference Include="IllusionLibs.AIGirl.UnityEngine.CoreModule" Version="2018.2.21.4" />
+    <PackageReference Include="IllusionLibs.AIGirl.UnityEngine.IMGUIModule" Version="2018.2.21.4" />
+    <PackageReference Include="IllusionLibs.AIGirl.UnityEngine.TextRenderingModule" Version="2018.2.21.4" />
+    <PackageReference Include="IllusionLibs.AIGirl.UnityEngine.UI" Version="2018.2.21.4" />
+    <PackageReference Include="IllusionLibs.AIGirl.UnityEngine.UIModule" Version="2018.2.21.4" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PostBuildEvent>IF EXIST "$(SolutionDir)PostBuild.bat" CALL "$(SolutionDir)PostBuild.bat" "$(TargetPath)" AI</PostBuildEvent>
+  </PropertyGroup>
+
+</Project>

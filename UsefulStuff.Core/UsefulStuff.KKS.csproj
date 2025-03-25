@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+    <AssemblyName>KKSUS</AssemblyName>
+    <DefineConstants>$(DefineConstants);BEPINEX;KOIKATSU;SUNSHINE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.Assembly-CSharp" Version="2021.9.17" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.CoreModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.Unity.TextMeshPro" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.AnimationModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.AssetBundleModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.IMGUIModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.InputLegacyModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.TextRenderingModule" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.UI" Version="2019.4.9" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.UIModule" Version="2019.4.9" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PostBuildEvent>IF EXIST "$(SolutionDir)PostBuild.bat" CALL "$(SolutionDir)PostBuild.bat" "$(TargetPath)" KKS</PostBuildEvent>
+  </PropertyGroup>
+
+</Project>
